@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   dev:
-    container_name: nestjs_api_dev
-    image: nestjs-api-dev:1.0.0
+    container_name: assignment_api_dev
+    image: assignment-api-dev:1.0.0
     build:
       context: .
       target: development
@@ -13,14 +13,14 @@ services:
       - 3000:3000
       - 9229:9229
     networks:
-      - nesjs-network
+      - assignment-network
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
   prod:
-    container_name: nestjs_api_prod
-    image: nestjs-api-prod:1.0.0
+    container_name: assignment_api_prod
+    image: assignment-api-prod:1.0.0
     build:
       context: .
       target: production
@@ -30,11 +30,11 @@ services:
       - 3000:3000
       - 9229:9229
     networks:
-      - nesjs-network
+      - assignment-network
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
 
 networks:
-  nesjs-network:
+  assignment-network:
