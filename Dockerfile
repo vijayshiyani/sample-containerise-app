@@ -2,6 +2,8 @@
 
 FROM node:14-alpine AS development
 
+ENV NODE_ENV development
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -34,9 +36,9 @@ FROM node:14-alpine as production
 
 ENV NODE_ENV production
 
-
 WORKDIR /home/node
 
+COPY --from=builder /home/node/public/ /home/node/public/
 COPY --from=builder /home/node/package*.json /home/node/
 COPY --from=builder /home/node/node_modules/ /home/node/node_modules/
 COPY --from=builder /home/node/dist/ /home/node/dist/
