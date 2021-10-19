@@ -43,4 +43,4 @@ COPY --from=builder /home/node/node_modules/ /home/node/node_modules/
 COPY --from=builder /home/node/dist/ /home/node/dist/
 COPY --from=builder /home/node/public/ /home/node/public/
 
-CMD ["node", "dist/main.js"]
+CMD ["npm", "run", "start:prod"]
