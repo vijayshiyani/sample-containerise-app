@@ -41,13 +41,14 @@ $ docker-compose up prod
 
 
 # running test
+$ npm install
 $ npm run test
 
 ```
 
 Navigate to [http://localhost:3000/](http://localhost:3000/) and try out `/version` endpoint http://localhost:3000/#/General/AppController_getVersion
 
-### 1.2 Downloading released production ready versions from Docker hub container registery
+### 1.2 Downloading production ready versions from Docker hub container registery
 
 ```bash
 
