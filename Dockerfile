@@ -38,9 +38,9 @@ ENV NODE_ENV production
 
 WORKDIR /home/node
 
-COPY --from=builder /home/node/public/ /home/node/public/
 COPY --from=builder /home/node/package*.json /home/node/
 COPY --from=builder /home/node/node_modules/ /home/node/node_modules/
 COPY --from=builder /home/node/dist/ /home/node/dist/
+COPY --from=builder /home/node/public/ /home/node/public/
 
 CMD ["node", "dist/main.js"]
